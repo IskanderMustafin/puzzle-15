@@ -12,6 +12,7 @@ import scala.swing.event.ButtonClicked
  * Отображаемая ячейка во вьюшке
  * @param _label текст для отображения
  * @param pos позиция ячейки
+ * @param clickHandler обработчик события по клику на ячейке
  */
 class CellWidget(private var _label: String, val pos: CellPosition, clickHandler: (CellPosition) => Unit) extends Button {
 
