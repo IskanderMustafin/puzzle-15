@@ -10,7 +10,7 @@ import com.isk.puzzle.models.GridModel
  */
 
 /**
- * Реализация презентера для пятнашек
+ * Реализация презентера для пятнашек. Управляет представлением игры. Связывает модель игры с представлением.
  * @param view представление (view) которым оперирует презентер
  * @param puzzleModel модель поля игры
  */
@@ -25,7 +25,7 @@ class PuzzlePresenterImpl(val view: PuzzleView, puzzleModel: GridModel) extends 
    */
   def bind() {
     // при изменении модели отображаем изменения в UI
-    puzzleModel.onCellsSwap{ (posFrom, posTo) =>
+    puzzleModel.onCellsSwap { (posFrom, posTo) =>
       view.swapCells(posFrom, posTo)
     }
 
@@ -34,12 +34,12 @@ class PuzzlePresenterImpl(val view: PuzzleView, puzzleModel: GridModel) extends 
     }
 
     // меняем модель по событиям в UI
-    view.onCellClicked{ clickedCellPosition =>
+    view.onCellClicked { clickedCellPosition =>
       puzzleModel.trySwapWithEmptySlot(clickedCellPosition)
     }
   }
 
-  def start(rootPanel: Frame) = {
+  def present(rootPanel: Frame) = {
     rootPanel.contents = view // неявное преобразование из View в Component
   }
 

@@ -9,7 +9,7 @@ import com.isk.puzzle.models.CellPosition
  */
 
 /**
- * Реализация вьюшки для пятнашек
+ * Реализация вьюшки для пятнашек. Отображает ячейки в поле X * Y
  * @param width ширина поля
  * @param height высота поля
  */

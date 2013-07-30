@@ -31,8 +31,8 @@ object Starter extends SimpleSwingApplication {
     val viewLabels = PuzzleLabelsFactory(PuzzleLabelType.ARABIC_NUMERALS, gridSize.size - 1) // Отображаемые значения и размер поля можно вынести в настройки
     // вьюшка не должна знать о модели, передаем конкретные значения
     val view = new PuzzleViewImpl(viewLabels, gridSize.width, gridSize.height)
-    // стартуем презентер
-    new PuzzlePresenterImpl(view, grid).start(rootPanel)
+
+    new PuzzlePresenterImpl(view, grid).present(rootPanel)
   }
 
 }

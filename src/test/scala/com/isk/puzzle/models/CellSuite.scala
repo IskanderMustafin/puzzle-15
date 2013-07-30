@@ -18,7 +18,6 @@ class CellSuite extends FunSuite {
     assert(pos.right === new CellPosition(4, 4))
   }
 
-  test("Cell position above ")
 
 
 

@@ -18,5 +18,5 @@ trait Presenter  [ConcreteView <: View] {
    * Добавляет представление (вьюшку) в панель для отображения на экране
    * @param rootPanel панель в которую нужно добавить вюьшку
    */
-  def start(rootPanel: Frame): Unit
+  def present(rootPanel: Frame): Unit
 }
