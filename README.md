@@ -1,6 +1,6 @@
-Запуск проекта:
+Running the Puzzle game:
 
-1. Запустить командную строку
-2. Перейти в директорию с проектом
-3. Запустить SBT, выполнив команду 'sbt'
-4. Запустить приложение, выполвнив команду 'run'
+1. Open terminal window.
+2. Change current directory to $PROJECT_HOME
+3. Run SBT, by executing 'sbt' command
+4. Execute 'run' command to start the game
