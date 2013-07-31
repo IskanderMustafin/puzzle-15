@@ -1,24 +1,35 @@
 package com.isk.puzzle.models
 
-import org.scalatest.FunSuite
-
+import org.scalatest.{BeforeAndAfter, FunSuite}
 
 /**
  * @author welcometo
  */
-class CellSuite extends FunSuite {
+class CellSuite extends FunSuite with BeforeAndAfter {
 
+  var gridModel: GridModel = _
 
-  test("cell position have four adjacent positions") {
-    val pos = new CellPosition(3, 3)
-    assert(pos.getPositionsAround.size === 4)
-
-    assert(pos.below === new CellPosition(3, 2))
-    assert(pos.left === new CellPosition(2, 3))
-    assert(pos.right === new CellPosition(4, 4))
+  before {
+    gridModel = new GridModel(GridSize(4, 4))
   }
 
+  test("current position of new cell is equal to initial position") {
+    val cell = new Cell(CellPosition(3, 3), gridModel)
+    assert(cell.curPosition === cell.initPosition)
+  }
 
+  test("cell is not at initial position") {
+    val cell = new Cell(CellPosition(3, 3), gridModel)
+    cell.curPosition = CellPosition(2, 2)
+    assert(cell.isAtInitialPosition === false)
+  }
 
+  test("Cell(3,3) is adjacent to Cell(3, 4) in gridSize(4, 4) and vice-versa") {
+    val cell = new Cell(CellPosition(3, 3), gridModel)
+    val adjacentCell = new Cell(CellPosition(3, 4), gridModel)
+
+    assert(cell.isAdjacentTo(adjacentCell) === true)
+    assert(adjacentCell.isAdjacentTo(cell) === true)
+  }
 
 }
