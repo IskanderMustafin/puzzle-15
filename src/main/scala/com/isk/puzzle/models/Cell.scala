@@ -48,7 +48,7 @@ case class Cell(initPosition: CellPosition, gridModel: GridModel) {
    * @return список примыкающих ячеек
    */
   private def adjacentCells = {
-      val adjacentPositions = curPosition.getPositionsAround
+      val adjacentPositions = curPosition.positionsAround
       adjacentPositions.filter(gridModel.isPositionInBounds(_)).map(gridModel.cellAt(_))
   }
 

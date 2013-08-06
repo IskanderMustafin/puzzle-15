@@ -1,11 +1,25 @@
-target
-.idea*
-atlassian-ide-plugin.xml
-*.iws
-*.ipr
+# SBT
+boot/
+lib_managed/
+src_managed/
+test-output/
+target/
+.history
+
+# IntelliJ
+.idea/
 *.iml
-.project
-.settings
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.cache
 .classpath
-.idea
-.hide
+.project
+.scala_dependencies
+.settings
+.target/
+
+# Other
+atlassian-ide-plugin.xml

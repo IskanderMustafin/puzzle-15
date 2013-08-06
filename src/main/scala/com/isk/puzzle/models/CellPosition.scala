@@ -33,8 +33,7 @@ case class CellPosition(x: Int, y: Int) {
 
 
   /**
-   * Возвращает окружающие позиции (выше, ниже, левее, правее)
-   * @return список окружающих позиций
+   * Список окружающих позиций (выше, ниже, левее, правее)
    */
-  def getPositionsAround = List(above, right, left, below)
+  lazy val positionsAround = List(above, right, left, below)
 }
